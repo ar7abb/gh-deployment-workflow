@@ -1,0 +1,16 @@
+name: My First Deployment Workflow
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'index.html'
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Say hello
+        run: echo "The workflow is running!"
