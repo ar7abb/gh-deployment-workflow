@@ -14,7 +14,23 @@ jobs:
     steps:
       - name: checkout files
         uses: actions/checkout@v7.0.0
+        
       - name: list files
         run: ls
+        
       - name: show html code
         run: cat index.html
+        
+      - name: Prepare website folder
+        run: |
+          mkdir public
+          cp index.html public/
+          ls public
+          
+      - name: Upload website artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: public
+
+      - name: Deploy to GitHub Pages
+        uses: actions/deploy-pages@v4
