@@ -12,5 +12,9 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Say hello
-        run: echo "The workflow is running!"
+      - name: checkout files
+        uses: actions/checkout@v7.0.0
+      - name: list files
+        run: ls
+      - name: show html code
+        run: cat index.html
